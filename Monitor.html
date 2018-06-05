@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+	.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 60px;
+}
+</style>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<title>Ensure Billing Syetem</title>
+</head>
+<body>
+	<div class="container">
+<h1>Monitor</h1>
+
+  <div class="row">
+    <div class="col-sm-2" >
+    	<p>List of Employees
+        <button class="btn btn-info btn-lg" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+          <span class="glyphicon glyphicon-list-alt"></span> Employees
+        </button>
+      </p> </div>
+    <div class="col-sm-2" >  <p>List of Clients
+        <a href="#" class="btn btn-info btn-lg">
+          <span class="glyphicon glyphicon-list-alt"></span> Clients
+        </a>
+      </p> </div>
+    <div class="col-sm-2" > 
+      <p>List of Dues
+        <a href="#" class="btn btn-danger btn-lg">
+          <span class="glyphicon glyphicon-list-alt"></span> Dues
+        </a></div>
+  </div>
+
+   
+      </p> 
+</div>
+<div id="id01" class="modal">
+	 <form class="modal-content animate" action="/action_page.php">
+<h2 style="color: red;">To be initialized..............</h2>
+    
+  <div class="container">
+      <button type="button" onclick="document.getElementById('id01').style.display='none'" class="btn btn-danger">Cancel</button>
+    
+    </div>
+  </form>
+</div>
+
+<script>
+
+var modal = document.getElementById('id01');
+
+
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+</script>
+</body>
+</html>
