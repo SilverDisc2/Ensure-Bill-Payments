@@ -1,7 +1,35 @@
+
+<?php
+include('connection.php');
+
+
+if(isset($_POST['submit']))
+{
+$mail=mysqli_real_escape_string($link,$_POST['email']);
+$pas=mysqli_real_escape_string($link,$_POST['pass']);
+$dis=mysqli_real_escape_string($link,$_POST['dis']);
+$role=mysqli_real_escape_string($link,$_POST['role']);
+
+
+$query1=mysqli_query($link,"INSERT INTO client VALUES ('', '$mail','$pas','$dis','$role')");
+$query2= mysqli_query($link,"INSERT INTO users VALUES ('', '$mail','$pas','$role')  "); 
+
+//$query1=mysqli_query($link,"INSERT INTO roles(stat,name)VALUES('$stat','$name')");
+if($query1)
+{
+header("location:monitor.html");
+}
+else
+{ 
+echo("Error description: " . mysqli_error($link));}
+}
+?>
+
+</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Ensure Bill Payment</title>
+  <title>Bootstrap Example</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -10,6 +38,7 @@
      <link rel="stylesheet" href="homepage.css">
 </head>
 <body >
+   
 
 <div class="jumbotron" style="background-image:url('back.jpg'); ">
 
@@ -40,47 +69,32 @@
         <li><a href="cont">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
     
       </ul>
     </div>
   </div>
 </nav>
 
-<div class="container text-center" id="services">    
+<div class="container " id="services">    
   <div class="row">
-    <dir><h2>Services</h2></dir>
-    <div class="col-sm-4">
-      <div class="panel panel-success">
-        <div class="panel-heading">Company</div>
-        <div class="panel-body"><img src="stroe.jpg" class="img-responsive" style="width:100%" alt="Image"></div>
-        <div class="panel-footer">fggf hfghgfhgf gfngf h ghj gf gf</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-warning">
-        <div class="panel-heading">Employee</div>
-        <div class="panel-body"><img src="note.jpg
-          " class="img-responsive" style="width:87%" alt="Image"></div>
-        <div class="panel-footer">gfdggrdf fghb fh fgh fhf</div>
-      </div>
-    </div>
-    <div class="col-sm-4"> 
-      <div class="panel panel-success">
-        <div class="panel-heading">Client</div>
-        <div class="panel-body"><img src="handover.jpg" class="img-responsive" style="width:87%" alt="Image"></div>
-        <div class="panel-footer"> fgfgh fgh gfddfh gfhjghn fghfgjg</div>
-      </div>
-    </div>
-  </div>
-</div><br>
+ 
 
-<div id="about" class="container text-center">
-  
-  <h2>About Us</h2>   
-            
-  
-    <p>Store, Check & Validate</p>
+<form method="post" action="" class = "form-group" >
+
+<label>Email:</label> <input type="text" name="email" class="form-control" ><br>
+<label>Password:</label> <input type="text" name="pass" class="form-control" ><br>
+<label> District: </label><input type="text" name="dis" class="form-control"><br>
+
+ <label><b>Role</b></label><br>
+ <select name="role" class="form-control" >
+  <option value="1">Company</option>
+  <option value="2">Employee</option>
+  <option value="3">Client</option>
+</select></br>
+    
+<input type="submit" name="submit">
+</form>
   </div>
   
 <footer class="container-fluid text-center">
