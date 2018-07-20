@@ -1,36 +1,6 @@
+<?php include('headerE.php')  ?>
 <html>
-<style>
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-</style>
 <body>
 <?php
 include('connection.php');
@@ -48,7 +18,9 @@ $cl_id=mysqli_real_escape_string($link,$_POST['clid']);
 $query1=mysqli_query($link,"insert into payment values('','$amm','$mon','$cl_id' ,rand())");
 if($query1)
 {
-header("location:list.php");
+{ 
+echo("Payment Collection Completed Successfully! ");
+}
 }
 else
 { 
@@ -56,14 +28,24 @@ echo("Error description: " . mysqli_error($link));}
 }
 ?>
 
-<form method="post" action="">
-Ammount: <input type="text" name="ammount"><br>
-Month: <input type="date" name="month"><br>
-Client id: <input type="text" name="clid"><br>
+<form  class="form-group" method="post" action="">
+Ammount: <input class="form-control" type="text" name="ammount"><br>
+
+Month:<input  class="form-control"type="text" name="month"
+>
 
 <br>
-<input type="submit" name="submit">
+Client id: <input class="form-control" type="text" name="clid"><br>
+
+<br>
+<input class="btn btn-info btn-lg"type="submit" name="submit" value="Receive">
 </form>
 
 </body>
 </html>
+<br>
+<br>
+<br>
+<br>
+
+<?php  include('footer.php')?>

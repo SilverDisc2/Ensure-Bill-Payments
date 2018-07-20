@@ -1,3 +1,6 @@
+<?php 
+include('header.php');
+ ?>
 <?php
 
 include('connection.php');
@@ -35,7 +38,7 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['role'] . "</td>";
           
                
-                    echo "<td><a href='editp.php?id=".$row['cl_id']."'>Edit</a></td>";
+                    echo "<td><a href='editclient.php?id=".$row['cl_id']."'>Edit</a></td>";
 echo "<td><a onclick=\"return confirm('Delete this record?')\"  href='deletep.php?id=".$row['cl_id']."'>x</a></td><tr>";
                     
                 
@@ -56,3 +59,6 @@ echo "<td><a onclick=\"return confirm('Delete this record?')\"  href='deletep.ph
 mysqli_close($link);
 
 ?>
+<?php 
+include('footer.php');
+ ?>

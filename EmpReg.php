@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title></title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -65,8 +65,8 @@ echo("Error description: " . mysqli_error($link));}
         <li><a href="#">Mission</a></li>
         <li><a href="cont">Contact</a></li>
       </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="Registration.html"><span class="glyphicon glyphicon-user"></span> Create Account</a></li>
+       <ul class="nav navbar-nav navbar-right">
+        <li><a href="logout.php"><span class="glyphicon glyphicon-user"></span> Logout</a></li>
     
       </ul>
     </div>
@@ -101,7 +101,7 @@ echo "<option value='". $row['type'] ."'>" .$row['type'] ."</option>" ;
   <option value="3">Client</option>
 </select></br>
     
-<input type="submit" name="submit">
+<input class="btn btn-info btn-lg" type="submit" value="Register" name="submit">
 </form>
   </div>
   

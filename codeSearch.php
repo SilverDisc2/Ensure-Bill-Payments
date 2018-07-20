@@ -1,6 +1,5 @@
-<?php 
-include('headerC.php');
- ?>
+<?php  
+include('headerE.php')?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,25 +7,19 @@ include('headerC.php');
 </head>
 <body>
 <form class="form-group" method="post" action="">
-
-
 Month: <input class="form-control" type="text" name="mon"><br>
 
-
 Client ID: <input class="form-control" type="text" name="clid"><br>
+Code: <input type="text" class="form-control" name="code"><br>
+
 
 
 <br>
-<input  type="submit" class="btn btn-info btn-lg" value="Search"name="submit">
+<input type="submit" class="btn btn-info btn-lg"value="Enter"name="submit">
 </form>
 
 </body>
 </html>
-
-<br>
-<br>
-<br>
-<br>
 <?php
 
 include('connection.php');
@@ -34,36 +27,20 @@ include('connection.php');
 if(isset($_POST['submit']))
 {
 $clid=$_POST['clid'];
+$code=$_POST['code'];
+
 $month=$_POST['mon'];
 
 if(isset($_POST['submit'])){
-$sql = "SELECT * FROM payment WHERE cl_id='$clid' and month='$month'";
+$sql = "SELECT * FROM payment WHERE cl_id='$clid' and month='$month' and code='$code'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
-        echo "<table >";
-            echo "<tr>";
-            
-                echo "<th>Your Code</th>";
+        
+                      
+                     header("location:payment.php");   
           
-                
                
-                
-  
-            echo "</tr>";
-        while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-             //echo "<td>" . $row['pres_id'] . "</td>";
-                echo "<td>" . $row['code'] . "</td>";
-                
-              
-                  
-                
-
-            echo "</tr>";
-        }
-        echo "</table>";
-        // Free result set
         mysqli_free_result($result);
     } else{
         echo "No records matching your query were found.";
@@ -77,6 +54,6 @@ mysqli_close($link);
 }
 ?>
 
-<?php 
-include('footer.php');
- ?>
+
+<?php  
+include('footer.php')?>

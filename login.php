@@ -1,3 +1,5 @@
+<?php 
+include('header.php') ?>
 <html>
 <head>
   <title>EBS Login</title>
@@ -7,38 +9,7 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<style>
-input[type=text], select {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box;
-}
 
-input[type=submit] {
-    width: 100%;
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-input[type=submit]:hover {
-    background-color: #45a049;
-}
-
-div {
-    border-radius: 5px;
-    background-color: #f2f2f2;
-    padding: 20px;
-}
-</style>
 <body>
 <?php
 include('connection.php');
@@ -61,7 +32,7 @@ $sql="SELECT * FROM users WHERE email= '$mail' and password='$pas'";
        
         if($role==1){
        
-         header("location:monitor.html");   
+         header("location:monitor2.php");   
       }
 else if($role==2)
 {
@@ -100,7 +71,7 @@ Email: <input class="form-control" type="text" name="email"><br>
 Password: <input type="password" class="form-control"  type="text" name="pass"><br>
 <br>
 
-<input type="submit"  name="submit" value="Login"> 
+<input type="submit"  class="btn btn-info btn-lg"name="submit" value="Login"> 
 
 </div>
 </form>
