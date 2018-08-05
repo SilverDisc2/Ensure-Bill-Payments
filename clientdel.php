@@ -13,8 +13,8 @@ $sql = "SELECT * FROM client";
 if($result = mysqli_query($link, $sql)){
     if (mysqli_num_rows($result) > 0){
  
-        echo "<table >";
-            echo "<tr>";
+        echo "<table class='table table-bordered'>";
+            echo "<tr class='info'>";
               
              echo "<th>cl_id</th>";
                 
@@ -38,8 +38,6 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['role'] . "</td>";
           
                
-                    echo "<td><a href='editclient.php?id=".$row['cl_id']."'>Edit</a></td>";
-echo "<td><a onclick=\"return confirm('Delete this record?')\"  href='deletep.php?id=".$row['cl_id']."'>x</a></td><tr>";
                     
                 
 

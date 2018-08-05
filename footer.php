@@ -13,26 +13,16 @@
 
     /* Add a gray background color and some padding to the footer */
     footer {
-      background-color: #f2f2f2;
-      padding: 0px;
-	  width:1400px;
-	  height:30px;
+    padding: 0px;
+	  width:100%;
+	  height:100px;
 }
 
 </style>
 
 
-
-<div id="about" class="container text-center">
-  
-  <h2>About Us</h2>   
-            
-  
-    <p><i>Store,Check & Validate</i></p>
-  </div>
-  
 <footer class="container-fluid text-center">
-  <p style="background-image:url('C0FFC0.png'); color: #4d4d4d; ">	&copy EBS All Right Reserve 2018</p>  
+  <p style="background-image:url('back.jpg'); color: #4d4d4d; ">	&copy EBS All Right Reserve 2018</p>  
   <form class="form-inline">
    
   </form>

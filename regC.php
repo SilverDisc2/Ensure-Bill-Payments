@@ -99,7 +99,7 @@ echo("Error description: " . mysqli_error($link));}
   </div>
   
 <footer class="container-fluid text-center">
-  <p style="background-image:url('back.jpg'); color: #4d4d4d; ">EBS Copyright 2018</p>  
+  <p style="background-image:url('back.jpg'); color: #4d4d4d; "> &copy EBS Copyright 2018</p>  
   <form class="form-inline">
    
   </form>

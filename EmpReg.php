@@ -82,6 +82,9 @@ echo("Error description: " . mysqli_error($link));}
 <label>Comapny Name: </label> 
 <select name="email" class="form-control">
 <option value="pick">Select Comapany </option> 
+<option value="pick">Dish </option> 
+<option value="pick">News Paper</option> 
+<option value="pick">Telephone </option> 
 <?php
 include('connection.php');
 

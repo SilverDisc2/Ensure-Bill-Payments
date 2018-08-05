@@ -4,6 +4,18 @@ include('header.php');
 <html>
 
 <body>
+
+
+<form method="post" action="" class = "form-group" >
+Service ID: <input type="text" class="form-control" name="sid"><br>
+Service Name: <input type="text" name="sname" class="form-control" ><br>
+Price: <input type="text" name="price" class="form-control" ><br>
+Cid: <input type="text" name="cid" class="form-control" ><br>
+
+
+<br>
+<input class="btn btn-info btn-lg"type="submit" value="Create List"name="submit">
+</form>
 <?php
 include('connection.php');
 
@@ -26,8 +38,8 @@ $sql = "SELECT * FROM service WHERE c_id='$id'";
 if($result = mysqli_query($link, $sql)){
     if(mysqli_num_rows($result) > 0){
 
-        echo "<table >";
-            echo "<tr>";
+        echo "<table class='table table-bordered'>";
+            echo "<tr class='success'>";
              //  echo "<th>Precription ID:</th>";
                 echo "<th>Service ID</th>";
                 echo "<th>Service Name</th>";
@@ -60,18 +72,6 @@ echo("Error description: " . mysqli_error($link));}
 }
 }
 ?>
-
-<form method="post" action="">
-Service ID: <input type="text" name="sid"><br>
-Service Name: <input type="text" name="sname"><br>
-Price: <input type="text" name="price"><br>
-Cid: <input type="text" name="cid"><br>
-
-
-<br>
-<input type="submit" name="submit">
-</form>
-
 </body>
 </html>
 <?php 

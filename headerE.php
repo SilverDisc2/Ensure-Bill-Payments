@@ -50,7 +50,7 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="homepage.html">Home</a></li>
+        
         <li><a href="codeSearch.php">Collect Payment
         </a></li>
         

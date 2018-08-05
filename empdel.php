@@ -13,8 +13,8 @@ $sql = "SELECT * FROM employee";
 if($result = mysqli_query($link, $sql)){
     if (mysqli_num_rows($result) > 0){
  
-        echo "<table >";
-            echo "<tr>";
+        echo "<table class='table table-bordered'>";
+            echo "<tr class='info'>";
               
              echo "<th>e_id</th>";
                 echo "<th>usermame</th>";
@@ -36,8 +36,8 @@ if($result = mysqli_query($link, $sql)){
                 echo "<td>" . $row['stat'] . "</td>";
           
                
-                    echo "<td><a href='editp.php?id=".$row['e_id']."'>Edit</a></td>";
-echo "<td><a onclick=\"return confirm('Delete this record?')\"  href='deleteemp.php?id=".$row['e_id']."'>x</a></td><tr>";
+                    echo "<td><a href='edit_emp.php?id=".$row['e_id']."'>Edit</a></td>";
+echo "<td><a onclick=\"return confirm('Delete this record?')\"  href='del_emp.php?id=".$row['e_id']."'>x</a></td><tr>";
                     
                 
 

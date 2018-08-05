@@ -7,7 +7,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
+         <link rel="stylesheet" href="homepage.css">
+
 </head>
 <style>
     /* Remove the navbar's default rounded borders and increase the bottom margin */ 
@@ -50,13 +51,12 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="homepage.html">Home</a></li>
         <li><a href="#about">About</a></li>
-        <li><a href="#">Mission</a></li>
-        <li><a href="cont">Contact</a></li>
+        <li><a href="#cont">Contact</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="login.php"><span class="glyphicon glyphicon-user"></span> Login</a></li>
+        <li><a href="logout.php"><span class="glyphicon glyphicon-user">Logout</span></a></li>
     
       </ul>
     </div>

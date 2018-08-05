@@ -46,11 +46,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">EBS</a>
+      <a class="navbar-brand" href="homepage.html">EBS</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="homepage.html">Home</a></li>
+        
         <li><a href="check.php">My Code</a></li>
         
       </ul>

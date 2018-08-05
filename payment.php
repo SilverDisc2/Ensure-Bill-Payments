@@ -1,7 +1,7 @@
 <?php include('headerE.php')  ?>
 <html>
 
-<body>
+<body onload="SetDate();">
 <?php
 include('connection.php');
 
@@ -29,9 +29,9 @@ echo("Error description: " . mysqli_error($link));}
 ?>
 
 <form  class="form-group" method="post" action="">
-Ammount: <input class="form-control" type="text" name="ammount"><br>
+Amount: <input class="form-control" type="text" name="ammount"><br>
 
-Month:<input  class="form-control"type="text" name="month"
+Month:<input  type="text" id="demo" class="form-control"type="text" name="month"
 >
 
 <br>
@@ -40,7 +40,29 @@ Client id: <input class="form-control" type="text" name="clid"><br>
 <br>
 <input class="btn btn-info btn-lg"type="submit" name="submit" value="Receive">
 </form>
+<script type="text/javascript">
+function SetDate() {
+    var month = new Array();
 
+    month[0] = "January";
+    month[1] = "February";
+    month[2] = "March";
+    month[3] = "April";
+    month[4] = "May";
+    month[5] = "June";
+    month[6] = "July";
+    month[7] = "August";
+    month[8] = "September";
+    month[9] = "October";
+    month[10] = "November";
+    month[11] = "December";
+
+    var d = new Date();
+    var n = month[d.getMonth()];
+    document.getElementById("demo").value = n;
+}
+
+</script>
 </body>
 </html>
 <br>

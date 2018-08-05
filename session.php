@@ -21,7 +21,7 @@
     $password = $_POST['pass'];
 
     //Create query
-    $qury = "SELECT * FROM user WHERE email= '{$email}' AND password = '{$password}'";
+    $qury = "SELECT * FROM users WHERE email= '{$email}' AND password = '{$password}'";
     $result = mysqli_query($link, $qury);
 
     //Check whethe the query was successful or not
@@ -29,22 +29,28 @@
         if(mysqli_num_rows($result)>0){
             //login successfull
             session_regenerate_id();
-            $member = mysqli_fetch_array($result);
+            $users = mysqli_fetch_array($result);
 
             
-            $_SESSION['SESS_MEMBER_ID']= $member['id'];
+            $_SESSION['SESS_USER_ID']= $users['id'];
             
-            $_SESSION['SESS_MEMBER_PASS']= $member['password '];
-            $_SESSION['SESS_MEMBER_email']= $member['email'];
+            $_SESSION['SESS_USER_PASS']= $users['password '];
+            $_SESSION['SESS_USER_email']= $users['email'];
             
             SESSION_WRITE_CLOSE();
-            header("location: index.php");
+            header("location: homepage.html");
             exit();
         }else{
             header("location: login.php");
             exit();
         
         }
+        if(!isset($_SESSION['SESS_USER_email'])){
+
+            header("location: login.php");
+            exit();
+        }
+    } 
     
     }else{
         die("Query Faild");
